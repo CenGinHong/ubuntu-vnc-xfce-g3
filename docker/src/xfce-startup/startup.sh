@@ -84,7 +84,7 @@ main() {
     if [ "${_arg_version_sticker}" == "on" ] || [ "${_arg_version_sticker_verbose}" == "on" ] ; then
 
         ### this handles also '--skip-vnc' and '--skip-novnc' options
-        start_vnc --skip-vnc
+        start_vnc --skip-novnc
 
         ### do not use '_verbose' which can be forced by '--debug'
         if [ "${_arg_version_sticker_verbose}" == "off" ] ; then
@@ -105,7 +105,7 @@ main() {
     if [ "${_arg_tail_vnc}" == "on" ] || [ ${_arg_tail_null} == "on" ] ; then
 
         ### this handles also '--skip-vnc' and '--skip-novnc' options
-        start_vnc --skip-vnc
+        start_vnc --skip-novnc
 
         ### command array expands to all elements quoted as a whole
         execute_command "${_arg_command[*]}"
@@ -132,7 +132,7 @@ main() {
     ### option '--wait' is purely because of the parser
 
     ### this handles also '--skip-vnc' and '--skip-novnc' options
-    start_vnc --skip-vnc
+    start_vnc --skip-novnc
 
     ### command array expands to all elements quoted as a whole
     execute_command "${_arg_command[*]}"
